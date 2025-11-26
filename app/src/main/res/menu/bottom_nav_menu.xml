@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_standings"
+        android:title="순위"
+        android:icon="@drawable/trophy" />
+    <item
+        android:id="@+id/nav_scorers"
+        android:title="득점"
+        android:icon="@drawable/volleyball" />
+    <item
+        android:id="@+id/nav_assists"
+        android:title="도움"
+        android:icon="@drawable/help" />
+</menu>
+
+
