@@ -38,14 +38,16 @@ class PlayerAdapter(
         private val tvName: TextView = itemView.findViewById(R.id.tvName)
         private val tvTeam: TextView = itemView.findViewById(R.id.tvTeam)
         private val tvValue: TextView = itemView.findViewById(R.id.tvValue)
+        private val tvMatches: TextView = itemView.findViewById(R.id.tvMatches)
 
         fun bind(row: PlayerRow) {
             tvRank.text = row.rank.toString()
             ivPhoto.load(row.playerPhotoUrl)
             tvName.text = row.playerName
             tvTeam.text = row.teamName ?: ""
+            tvMatches.text = "경기 ${row.matches}"
             tvValue.text = "${row.statValue}"
-            tvValue.contentDescription = "$statLabel ${row.statValue}"
+            tvValue.contentDescription = "$statLabel ${row.statValue}, 경기 ${row.matches}"
         }
     }
 }

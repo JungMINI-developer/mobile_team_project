@@ -35,12 +35,14 @@ class StandingsAdapter : RecyclerView.Adapter<StandingsAdapter.VH>() {
         private val ivLogo: ImageView = itemView.findViewById(R.id.ivLogo)
         private val tvTeam: TextView = itemView.findViewById(R.id.tvTeam)
         private val tvPoints: TextView = itemView.findViewById(R.id.tvPoints)
+        private val tvRecord: TextView = itemView.findViewById(R.id.tvRecord)
 
         fun bind(row: StandingsRow) {
             tvRank.text = row.rank.toString()
             ivLogo.load(row.teamLogoUrl)
             tvTeam.text = row.teamName
-            tvPoints.text = row.points.toString()
+            tvRecord.text = "경기 ${row.played} | ${row.win}승 ${row.draw}무 ${row.lose}패"
+            tvPoints.text = "승점 ${row.points}"
         }
     }
 }

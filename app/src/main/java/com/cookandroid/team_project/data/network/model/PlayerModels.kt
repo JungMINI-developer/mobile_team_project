@@ -13,7 +13,8 @@ data class Player(
 
 data class PlayerStatistics(
     val team: TeamRef?,
-    val goals: PlayerGoals?
+    val goals: PlayerGoals?,
+    val games: PlayerGames?
 )
 
 data class TeamRef(
@@ -25,6 +26,10 @@ data class TeamRef(
 data class PlayerGoals(
     val total: Int?,
     val assists: Int?
+)
+
+data class PlayerGames(
+    val appearences: Int?
 )
 
 
