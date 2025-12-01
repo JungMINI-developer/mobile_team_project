@@ -1,5 +1,6 @@
 package com.cookandroid.team_project.ui.standings
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class StandingsViewModel(
     private val repository: FootballRepository
-): ViewModel() {
+) : ViewModel() {
     private val _rows = MutableLiveData<List<StandingsRow>>(emptyList())
     val rows: LiveData<List<StandingsRow>> = _rows
 
@@ -22,11 +23,13 @@ class StandingsViewModel(
         viewModelScope.launch {
             try {
                 _rows.value = repository.getStandings(leagueId, season)
+            } catch (e: Exception) {
+                Log.e("StandingsViewModel", "getStandings failed", e)
+                _rows.value = emptyList()
             } finally {
                 _loading.value = false
             }
         }
     }
 }
-
 

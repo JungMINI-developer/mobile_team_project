@@ -61,6 +61,7 @@ dependencies {
     implementation("com.squareup.moshi:moshi:1.15.1")
     implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
     implementation("io.coil-kt:coil:2.6.0")
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
