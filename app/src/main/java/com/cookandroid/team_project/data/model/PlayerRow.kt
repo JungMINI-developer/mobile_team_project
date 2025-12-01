@@ -5,6 +5,7 @@ data class PlayerRow(
     val playerName: String,
     val teamName: String?,
     val statValue: Int,
+    val matches: Int,
     val playerPhotoUrl: String?,
     val teamLogoUrl: String?
 )

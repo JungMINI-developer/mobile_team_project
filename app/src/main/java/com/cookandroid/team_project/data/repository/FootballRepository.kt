@@ -58,6 +58,7 @@ class FootballRepository(
                 playerName = wrapper.player.name.orEmpty(),
                 teamName = stats?.team?.name,
                 statValue = valueSelector(wrapper),
+                matches = stats?.games?.appearences ?: 0,
                 playerPhotoUrl = wrapper.player.photo,
                 teamLogoUrl = stats?.team?.logo
             )
