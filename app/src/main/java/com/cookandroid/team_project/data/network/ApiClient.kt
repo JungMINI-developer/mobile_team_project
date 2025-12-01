@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 object ApiClient {
     private const val BASE_URL = "https://v3.football.api-sports.io/"
     // TODO: 여기에 본인 API 키를 직접 넣어 사용하세요.
-    private const val API_KEY = "92a4293632de7a14de8409556233b3b6"
+    private const val API_KEY = "51717addad5a31aaf762e6396aa87cca"
 
     private val authInterceptor = Interceptor { chain ->
         val original = chain.request()

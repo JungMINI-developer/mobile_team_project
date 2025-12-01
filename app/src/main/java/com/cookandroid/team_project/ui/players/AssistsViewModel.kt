@@ -1,5 +1,6 @@
 package com.cookandroid.team_project.ui.players
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class AssistsViewModel(
     private val repository: FootballRepository
-): ViewModel() {
+) : ViewModel() {
     private val _rows = MutableLiveData<List<PlayerRow>>(emptyList())
     val rows: LiveData<List<PlayerRow>> = _rows
 
@@ -22,6 +23,9 @@ class AssistsViewModel(
         viewModelScope.launch {
             try {
                 _rows.value = repository.getTopAssists(leagueId, season)
+            } catch (e: Exception) {
+                Log.e("AssistsViewModel", "getTopAssists failed", e)
+                _rows.value = emptyList()
             } finally {
                 _loading.value = false
             }
